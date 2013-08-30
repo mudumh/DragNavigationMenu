@@ -18,6 +18,8 @@
 		3A23E6BF17D04FBD00A98656 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A23E6BE17D04FBD00A98656 /* Default-568h@2x.png */; };
 		3A23E6C217D04FBD00A98656 /* DGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A23E6C117D04FBD00A98656 /* DGViewController.m */; };
 		3A23E6C517D04FBD00A98656 /* DGViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A23E6C317D04FBD00A98656 /* DGViewController.xib */; };
+		3A23E6CD17D04FD800A98656 /* DGMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A23E6CC17D04FD800A98656 /* DGMenu.m */; };
+		3A23E6D017D04FEB00A98656 /* DGMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A23E6CF17D04FEB00A98656 /* DGMenuItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,10 @@
 		3A23E6C017D04FBD00A98656 /* DGViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DGViewController.h; sourceTree = "<group>"; };
 		3A23E6C117D04FBD00A98656 /* DGViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DGViewController.m; sourceTree = "<group>"; };
 		3A23E6C417D04FBD00A98656 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DGViewController.xib; sourceTree = "<group>"; };
+		3A23E6CB17D04FD800A98656 /* DGMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGMenu.h; sourceTree = "<group>"; };
+		3A23E6CC17D04FD800A98656 /* DGMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGMenu.m; sourceTree = "<group>"; };
+		3A23E6CE17D04FEB00A98656 /* DGMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGMenuItem.h; sourceTree = "<group>"; };
+		3A23E6CF17D04FEB00A98656 /* DGMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGMenuItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +94,10 @@
 				3A23E6C017D04FBD00A98656 /* DGViewController.h */,
 				3A23E6C117D04FBD00A98656 /* DGViewController.m */,
 				3A23E6C317D04FBD00A98656 /* DGViewController.xib */,
+				3A23E6CE17D04FEB00A98656 /* DGMenuItem.h */,
+				3A23E6CF17D04FEB00A98656 /* DGMenuItem.m */,
+				3A23E6CB17D04FD800A98656 /* DGMenu.h */,
+				3A23E6CC17D04FD800A98656 /* DGMenu.m */,
 				3A23E6AF17D04FBD00A98656 /* Supporting Files */,
 			);
 			path = DragMenu;
@@ -177,6 +187,8 @@
 				3A23E6B517D04FBD00A98656 /* main.m in Sources */,
 				3A23E6B917D04FBD00A98656 /* DGAppDelegate.m in Sources */,
 				3A23E6C217D04FBD00A98656 /* DGViewController.m in Sources */,
+				3A23E6CD17D04FD800A98656 /* DGMenu.m in Sources */,
+				3A23E6D017D04FEB00A98656 /* DGMenuItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

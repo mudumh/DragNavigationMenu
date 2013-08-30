@@ -9,6 +9,7 @@
 #import "DGAppDelegate.h"
 
 #import "DGViewController.h"
+#import "DGMenuItem.h"
 
 @implementation DGAppDelegate
 
@@ -17,6 +18,14 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.viewController = [[DGViewController alloc] initWithNibName:@"DGViewController" bundle:nil];
+    CGRect menu_item_1_frame = CGRectMake(0, 0, 100, 100);
+    CGRect menu_item_2_frame = CGRectMake(0, 0, 100, 100);
+    CGRect menu_item_3_frame = CGRectMake(0, 0, 100, 100);
+    DGMenuItem * menu_item_1 = [[DGMenuItem alloc] initWithFrame:menu_item_1_frame];
+    DGMenuItem * menu_item_2 = [[DGMenuItem alloc] initWithFrame:menu_item_2_frame];
+    DGMenuItem * menu_item_3 = [[DGMenuItem alloc] initWithFrame:menu_item_3_frame];
+    
+    
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     return YES;
