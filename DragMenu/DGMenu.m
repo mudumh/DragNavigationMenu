@@ -10,42 +10,64 @@
 #import "DGMenuItem.h"
 
 @implementation DGMenu
-
-- (id)initWithFrame:(CGRect)frame
 {
+
+
+}
+
+
+
+-(id)initWithMenuItems:(NSArray *) menuItems 
+{
+    DGMenuItem * any_item = [menuItems objectAtIndex:0];
+    CGFloat menu_item_height =    [any_item frame].size.height;
+    CGFloat scrollViewWindowWidth =  [[UIScreen mainScreen] bounds].size.width;
+    CGRect frame = CGRectMake(0, 0, scrollViewWindowWidth, menu_item_height);
+    
     self = [super initWithFrame:frame];
-    if (self) {
-        
+    if(self)
+    {
+
+        self.menuItems = menuItems;
+        CGFloat current_x = 0;
+        CGFloat current_y = 0;
+        for(int i =0 ; i < [self.menuItems count];i++)
+            {
+                NSLog(@"the item number is : %d",i);
+                DGMenuItem * item = (DGMenuItem *)[self.menuItems objectAtIndex:i];
+                item.index = i;
+                item.menu=self;
+                [item setTitle:@"test" forState:UIControlStateNormal];
+                CGRect item_frame = [item bounds];
+                item_frame.origin.x= current_x;
+                item_frame.origin.y= current_y;
+                NSLog(@"the item x origin  is : %f",item_frame.origin.x);
+                NSLog(@"the item y origin  is : %f",item_frame.origin.y);
+                current_x = current_x+item_frame.size.width;
+                [item setFrame:item_frame];
+                //[item setBackgroundColor:[UIColor blackColor]];
+                [self addSubview:item];
+            
+            }
+        CGSize content_size;
+        content_size.width= current_x;
+        content_size.height= menu_item_height;
+        [self setContentSize:content_size];
+        [self setShowsHorizontalScrollIndicator:NO];
+
     }
+    
     return self;
 }
 
--(id)initWithMenuItems:(NSArray *) menuItems
+-(void)itemSelected:(DGMenuItem*)item atItemIndex:(NSInteger)indexinArray
 {
+    
+    [[self menuDelegate] selectedMenuItem:item atIndex:indexinArray];
 
-    self.menuItems = menuItems;
-    for(int i =0 ; i < [self.menuItems count];i++)
-    {
-        DGMenuItem * item = (DGMenuItem *)[self.menuItems objectAtIndex:i];
-        
-        
-    
-    
-    
-    
-    }
 
 
 
 }
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
 
 @end

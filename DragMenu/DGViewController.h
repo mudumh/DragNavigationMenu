@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface DGViewController : UIViewController
+#import "DGMenu.h"
+@interface DGViewController : UIViewController <DGMenuDelegate>
 
 @end

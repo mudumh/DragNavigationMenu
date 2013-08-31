@@ -7,11 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DGMenuItem.h"
 @class DGMenuItem;
 
-@interface DGMenu : UIScrollView<UIScrollViewDelegate>
-
-@property NSArray * menuItems;
--(id)initWithMenuItems:(NSArray *) menuItems;
+@protocol DGMenuDelegate
+-(void)selectedMenuItem:(DGMenuItem*)item atIndex:(NSInteger)indexinArray;
 
 @end
+
+@interface DGMenu : UIScrollView<UIScrollViewDelegate,DGMenuItemDelegate>
+
+@property NSArray * menuItems;
+@property(nonatomic,strong) id<DGMenuDelegate> menuDelegate;
+
+-(id)initWithMenuItems:(NSArray *) menuItems ;
+
+
+@end
+
+

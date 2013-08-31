@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A1E6B0D17D1413F00AF70FC /* DGViewControllerGreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A1E6B0B17D1413F00AF70FC /* DGViewControllerGreenViewController.m */; };
+		3A1E6B0E17D1413F00AF70FC /* DGViewControllerGreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A1E6B0C17D1413F00AF70FC /* DGViewControllerGreenViewController.xib */; };
 		3A23E6A917D04FBD00A98656 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A23E6A817D04FBD00A98656 /* UIKit.framework */; };
 		3A23E6AB17D04FBD00A98656 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A23E6AA17D04FBD00A98656 /* Foundation.framework */; };
 		3A23E6AD17D04FBD00A98656 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A23E6AC17D04FBD00A98656 /* CoreGraphics.framework */; };
@@ -20,9 +22,27 @@
 		3A23E6C517D04FBD00A98656 /* DGViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A23E6C317D04FBD00A98656 /* DGViewController.xib */; };
 		3A23E6CD17D04FD800A98656 /* DGMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A23E6CC17D04FD800A98656 /* DGMenu.m */; };
 		3A23E6D017D04FEB00A98656 /* DGMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A23E6CF17D04FEB00A98656 /* DGMenuItem.m */; };
+		3A23E6D617D0FC4300A98656 /* FUIButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A23E6D517D0FC4300A98656 /* FUIButton.m */; };
+		3A23E6D817D0FC6200A98656 /* UIImage+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A23E6D717D0FC6200A98656 /* UIImage+FlatUI.m */; };
+		3A23E6DD17D1333700A98656 /* UIColor+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A23E6DC17D1333700A98656 /* UIColor+FlatUI.m */; };
+		3A23E6E017D1336E00A98656 /* UIFont+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A23E6DF17D1336E00A98656 /* UIFont+FlatUI.m */; };
+		3A23E6E817D1341F00A98656 /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3A23E6E217D1341F00A98656 /* Lato-Black.ttf */; };
+		3A23E6E917D1341F00A98656 /* Lato-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3A23E6E317D1341F00A98656 /* Lato-BlackItalic.ttf */; };
+		3A23E6EA17D1341F00A98656 /* Lato-Hairline.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3A23E6E417D1341F00A98656 /* Lato-Hairline.ttf */; };
+		3A23E6EB17D1341F00A98656 /* Lato-HairlineItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3A23E6E517D1341F00A98656 /* Lato-HairlineItalic.ttf */; };
+		3A23E6EC17D1341F00A98656 /* Lato-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3A23E6E617D1341F00A98656 /* Lato-LightItalic.ttf */; };
+		3A23E6ED17D1341F00A98656 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3A23E6E717D1341F00A98656 /* Lato-Regular.ttf */; };
+		3A23E6F217D1342B00A98656 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3A23E6EE17D1342B00A98656 /* Lato-Bold.ttf */; };
+		3A23E6F317D1342B00A98656 /* Lato-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3A23E6EF17D1342B00A98656 /* Lato-BoldItalic.ttf */; };
+		3A23E6F417D1342B00A98656 /* Lato-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3A23E6F017D1342B00A98656 /* Lato-Italic.ttf */; };
+		3A23E6F517D1342B00A98656 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3A23E6F117D1342B00A98656 /* Lato-Light.ttf */; };
+		3A23E6F717D1349900A98656 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A23E6F617D1349800A98656 /* CoreText.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A1E6B0A17D1413F00AF70FC /* DGViewControllerGreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGViewControllerGreenViewController.h; sourceTree = "<group>"; };
+		3A1E6B0B17D1413F00AF70FC /* DGViewControllerGreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGViewControllerGreenViewController.m; sourceTree = "<group>"; };
+		3A1E6B0C17D1413F00AF70FC /* DGViewControllerGreenViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DGViewControllerGreenViewController.xib; sourceTree = "<group>"; };
 		3A23E6A517D04FBD00A98656 /* DragMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DragMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A23E6A817D04FBD00A98656 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3A23E6AA17D04FBD00A98656 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -43,6 +63,25 @@
 		3A23E6CC17D04FD800A98656 /* DGMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGMenu.m; sourceTree = "<group>"; };
 		3A23E6CE17D04FEB00A98656 /* DGMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGMenuItem.h; sourceTree = "<group>"; };
 		3A23E6CF17D04FEB00A98656 /* DGMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGMenuItem.m; sourceTree = "<group>"; };
+		3A23E6D417D0FC3900A98656 /* FUIButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FUIButton.h; sourceTree = "<group>"; };
+		3A23E6D517D0FC4300A98656 /* FUIButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FUIButton.m; sourceTree = "<group>"; };
+		3A23E6D717D0FC6200A98656 /* UIImage+FlatUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FlatUI.m"; sourceTree = "<group>"; };
+		3A23E6D917D0FC7300A98656 /* UIImage+FlatUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+FlatUI.h"; sourceTree = "<group>"; };
+		3A23E6DB17D1332E00A98656 /* UIColor+FlatUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+FlatUI.h"; sourceTree = "<group>"; };
+		3A23E6DC17D1333700A98656 /* UIColor+FlatUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+FlatUI.m"; sourceTree = "<group>"; };
+		3A23E6DE17D1336E00A98656 /* UIFont+FlatUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+FlatUI.h"; sourceTree = "<group>"; };
+		3A23E6DF17D1336E00A98656 /* UIFont+FlatUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+FlatUI.m"; sourceTree = "<group>"; };
+		3A23E6E217D1341F00A98656 /* Lato-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Black.ttf"; sourceTree = "<group>"; };
+		3A23E6E317D1341F00A98656 /* Lato-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BlackItalic.ttf"; sourceTree = "<group>"; };
+		3A23E6E417D1341F00A98656 /* Lato-Hairline.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Hairline.ttf"; sourceTree = "<group>"; };
+		3A23E6E517D1341F00A98656 /* Lato-HairlineItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-HairlineItalic.ttf"; sourceTree = "<group>"; };
+		3A23E6E617D1341F00A98656 /* Lato-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-LightItalic.ttf"; sourceTree = "<group>"; };
+		3A23E6E717D1341F00A98656 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
+		3A23E6EE17D1342B00A98656 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
+		3A23E6EF17D1342B00A98656 /* Lato-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BoldItalic.ttf"; sourceTree = "<group>"; };
+		3A23E6F017D1342B00A98656 /* Lato-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Italic.ttf"; sourceTree = "<group>"; };
+		3A23E6F117D1342B00A98656 /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
+		3A23E6F617D1349800A98656 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A23E6F717D1349900A98656 /* CoreText.framework in Frameworks */,
 				3A23E6A917D04FBD00A98656 /* UIKit.framework in Frameworks */,
 				3A23E6AB17D04FBD00A98656 /* Foundation.framework in Frameworks */,
 				3A23E6AD17D04FBD00A98656 /* CoreGraphics.framework in Frameworks */,
@@ -79,6 +119,7 @@
 		3A23E6A717D04FBD00A98656 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3A23E6F617D1349800A98656 /* CoreText.framework */,
 				3A23E6A817D04FBD00A98656 /* UIKit.framework */,
 				3A23E6AA17D04FBD00A98656 /* Foundation.framework */,
 				3A23E6AC17D04FBD00A98656 /* CoreGraphics.framework */,
@@ -89,6 +130,8 @@
 		3A23E6AE17D04FBD00A98656 /* DragMenu */ = {
 			isa = PBXGroup;
 			children = (
+				3A23E6E117D133DA00A98656 /* Resouces */,
+				3A23E6DA17D0FC8C00A98656 /* external components */,
 				3A23E6B717D04FBD00A98656 /* DGAppDelegate.h */,
 				3A23E6B817D04FBD00A98656 /* DGAppDelegate.m */,
 				3A23E6C017D04FBD00A98656 /* DGViewController.h */,
@@ -98,6 +141,9 @@
 				3A23E6CF17D04FEB00A98656 /* DGMenuItem.m */,
 				3A23E6CB17D04FD800A98656 /* DGMenu.h */,
 				3A23E6CC17D04FD800A98656 /* DGMenu.m */,
+				3A1E6B0A17D1413F00AF70FC /* DGViewControllerGreenViewController.h */,
+				3A1E6B0B17D1413F00AF70FC /* DGViewControllerGreenViewController.m */,
+				3A1E6B0C17D1413F00AF70FC /* DGViewControllerGreenViewController.xib */,
 				3A23E6AF17D04FBD00A98656 /* Supporting Files */,
 			);
 			path = DragMenu;
@@ -115,6 +161,38 @@
 				3A23E6BE17D04FBD00A98656 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3A23E6DA17D0FC8C00A98656 /* external components */ = {
+			isa = PBXGroup;
+			children = (
+				3A23E6DE17D1336E00A98656 /* UIFont+FlatUI.h */,
+				3A23E6DF17D1336E00A98656 /* UIFont+FlatUI.m */,
+				3A23E6DB17D1332E00A98656 /* UIColor+FlatUI.h */,
+				3A23E6DC17D1333700A98656 /* UIColor+FlatUI.m */,
+				3A23E6D417D0FC3900A98656 /* FUIButton.h */,
+				3A23E6D517D0FC4300A98656 /* FUIButton.m */,
+				3A23E6D717D0FC6200A98656 /* UIImage+FlatUI.m */,
+				3A23E6D917D0FC7300A98656 /* UIImage+FlatUI.h */,
+			);
+			name = "external components";
+			sourceTree = "<group>";
+		};
+		3A23E6E117D133DA00A98656 /* Resouces */ = {
+			isa = PBXGroup;
+			children = (
+				3A23E6EE17D1342B00A98656 /* Lato-Bold.ttf */,
+				3A23E6EF17D1342B00A98656 /* Lato-BoldItalic.ttf */,
+				3A23E6F017D1342B00A98656 /* Lato-Italic.ttf */,
+				3A23E6F117D1342B00A98656 /* Lato-Light.ttf */,
+				3A23E6E217D1341F00A98656 /* Lato-Black.ttf */,
+				3A23E6E317D1341F00A98656 /* Lato-BlackItalic.ttf */,
+				3A23E6E417D1341F00A98656 /* Lato-Hairline.ttf */,
+				3A23E6E517D1341F00A98656 /* Lato-HairlineItalic.ttf */,
+				3A23E6E617D1341F00A98656 /* Lato-LightItalic.ttf */,
+				3A23E6E717D1341F00A98656 /* Lato-Regular.ttf */,
+			);
+			name = Resouces;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,6 +252,17 @@
 				3A23E6BD17D04FBD00A98656 /* Default@2x.png in Resources */,
 				3A23E6BF17D04FBD00A98656 /* Default-568h@2x.png in Resources */,
 				3A23E6C517D04FBD00A98656 /* DGViewController.xib in Resources */,
+				3A23E6E817D1341F00A98656 /* Lato-Black.ttf in Resources */,
+				3A23E6E917D1341F00A98656 /* Lato-BlackItalic.ttf in Resources */,
+				3A23E6EA17D1341F00A98656 /* Lato-Hairline.ttf in Resources */,
+				3A23E6EB17D1341F00A98656 /* Lato-HairlineItalic.ttf in Resources */,
+				3A23E6EC17D1341F00A98656 /* Lato-LightItalic.ttf in Resources */,
+				3A23E6ED17D1341F00A98656 /* Lato-Regular.ttf in Resources */,
+				3A23E6F217D1342B00A98656 /* Lato-Bold.ttf in Resources */,
+				3A23E6F317D1342B00A98656 /* Lato-BoldItalic.ttf in Resources */,
+				3A23E6F417D1342B00A98656 /* Lato-Italic.ttf in Resources */,
+				3A23E6F517D1342B00A98656 /* Lato-Light.ttf in Resources */,
+				3A1E6B0E17D1413F00AF70FC /* DGViewControllerGreenViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,6 +278,11 @@
 				3A23E6C217D04FBD00A98656 /* DGViewController.m in Sources */,
 				3A23E6CD17D04FD800A98656 /* DGMenu.m in Sources */,
 				3A23E6D017D04FEB00A98656 /* DGMenuItem.m in Sources */,
+				3A23E6D617D0FC4300A98656 /* FUIButton.m in Sources */,
+				3A23E6D817D0FC6200A98656 /* UIImage+FlatUI.m in Sources */,
+				3A23E6DD17D1333700A98656 /* UIColor+FlatUI.m in Sources */,
+				3A23E6E017D1336E00A98656 /* UIFont+FlatUI.m in Sources */,
+				3A1E6B0D17D1413F00AF70FC /* DGViewControllerGreenViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,6 +405,7 @@
 				3A23E6CA17D04FBD00A98656 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

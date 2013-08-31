@@ -7,17 +7,23 @@
 //
 
 #import <UIKit/UIKit.h>
-@protocol DGMenuItemDelegate;
+#import "FUIButton.h"
 
-
-@interface DGMenuItem : UIButton
-@property id<DGMenuItemDelegate> delegate;
-
-
-@end
+@class DGMenuItem;
 
 @protocol DGMenuItemDelegate
+-(void)itemSelected:(DGMenuItem*)item atItemIndex:(NSInteger)indexinArray;
+@end
 
--(void)menuItemPressed:(DGMenuItem*)item;
+
+@interface DGMenuItem : FUIButton
+
+@property id<DGMenuItemDelegate> menu;
+@property NSInteger index;
+
+-(id)initMenuItemWithTitle:(NSString*)title width:(CGFloat)width height:(CGFloat)height buttonColor:(UIColor*)color titleFont:(UIFont*)font titleFontColor:(UIColor *)fontColor;
 
 @end
+
+
+
