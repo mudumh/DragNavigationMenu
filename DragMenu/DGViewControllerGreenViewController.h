@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface DGViewControllerGreenViewController : UIViewController
+- (IBAction)donePressed:(id)sender;
 
 @end

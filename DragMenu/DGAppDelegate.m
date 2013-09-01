@@ -39,10 +39,12 @@
     CGFloat scrollViewWindowWidth =  [[UIScreen mainScreen] bounds].size.width;
     // scrollViewWindowHeight should ideally be the same as the height of a menu item.
     CGFloat scrollViewWindowHeight =  50;
-    CGRect menu_frame = CGRectMake(0, 0,scrollViewWindowWidth,scrollViewWindowHeight);
+    
     DGMenu* menu = [[DGMenu alloc] initWithMenuItems:[[NSArray alloc] initWithObjects:menu_item_1,menu_item_2,menu_item_3,menu_item_4,menu_item_5,menu_item_6,menu_item_7,nil]];
+    [menu setPagingEnabled:YES];
+    self.viewController.menu = menu;
     menu.menuDelegate = self.viewController;
-
+    
     
     [self.viewController.view addSubview:menu];
     self.window.rootViewController = self.viewController;

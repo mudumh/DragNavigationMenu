@@ -77,4 +77,51 @@
     }
 }
 
+- (IBAction)pressed:(id)sender {
+    
+    
+    //find the content offsets of each frame wrt to the center.
+    // the frame with the minimum content offset wrt to the center should be moved the center of the screen.
+    
+    NSLog(@"the x -content offset right now is  : %f",[self.menu contentOffset].x);
+    CGFloat half_screen_width = [[UIScreen mainScreen] bounds].size.width/2.0;
+    CGFloat content_offset_item = [self.menu contentOffset].x+half_screen_width;
+    CGFloat center_item_index;
+    NSArray* items =  [[self menu] menuItems];
+    DGMenuItem* center_item= [items objectAtIndex:0];
+    CGFloat min_offset= fabs(content_offset_item);
+    CGFloat item_width = [center_item frame].size.width;
+
+    for(int i = 0 ; i <[items count];i++)
+    {
+    //compute the content offset of this item
+    
+        content_offset_item = content_offset_item-item_width;
+        item_width= [[items objectAtIndex:i] frame].size.width;
+        if(fabs(content_offset_item)<min_offset)
+        {   NSLog(@"hitting the for loop");
+            min_offset =fabs(content_offset_item);
+            center_item = [items objectAtIndex:i];
+            center_item_index=i;
+            NSLog(@"the center item index is : %d",[center_item index]);
+            
+        }
+    
+    
+    }
+    //animate the contentview so that the center item is in the center
+    
+    //the x_co-or of center_item
+
+    CGFloat x = half_screen_width-[center_item frame].size.width/2.0;
+    CGFloat i_items_width = center_item_index*(item_width);
+    CGPoint offset;
+    offset.x = i_items_width-x;
+    offset.y = 0;
+    [[self menu] setContentOffset:offset animated:YES];
+    
+    
+    
+    
+}
 @end

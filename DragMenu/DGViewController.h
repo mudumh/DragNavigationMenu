@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "DGMenu.h"
 @interface DGViewController : UIViewController <DGMenuDelegate>
+- (IBAction)pressed:(id)sender;
 
+@property(strong,nonatomic) DGMenu * menu;
 @end
