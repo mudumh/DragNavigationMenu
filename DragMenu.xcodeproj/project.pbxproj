@@ -37,6 +37,7 @@
 		3A23E6F417D1342B00A98656 /* Lato-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3A23E6F017D1342B00A98656 /* Lato-Italic.ttf */; };
 		3A23E6F517D1342B00A98656 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3A23E6F117D1342B00A98656 /* Lato-Light.ttf */; };
 		3A23E6F717D1349900A98656 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A23E6F617D1349800A98656 /* CoreText.framework */; };
+		3AE65AD117D3DA3300CA2A29 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AE65AD017D3DA3300CA2A29 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +83,7 @@
 		3A23E6F017D1342B00A98656 /* Lato-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Italic.ttf"; sourceTree = "<group>"; };
 		3A23E6F117D1342B00A98656 /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
 		3A23E6F617D1349800A98656 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		3AE65AD017D3DA3300CA2A29 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AE65AD117D3DA3300CA2A29 /* QuartzCore.framework in Frameworks */,
 				3A23E6F717D1349900A98656 /* CoreText.framework in Frameworks */,
 				3A23E6A917D04FBD00A98656 /* UIKit.framework in Frameworks */,
 				3A23E6AB17D04FBD00A98656 /* Foundation.framework in Frameworks */,
@@ -102,6 +105,7 @@
 		3A23E69C17D04FBD00A98656 = {
 			isa = PBXGroup;
 			children = (
+				3AE65AD017D3DA3300CA2A29 /* QuartzCore.framework */,
 				3A23E6AE17D04FBD00A98656 /* DragMenu */,
 				3A23E6A717D04FBD00A98656 /* Frameworks */,
 				3A23E6A617D04FBD00A98656 /* Products */,

@@ -8,10 +8,12 @@
 
 #import "DGMenu.h"
 #import "DGMenuItem.h"
+#import <QuartzCore/QuartzCore.h>
+#import "UIColor+FlatUI.h"
 
 @implementation DGMenu
 {
-
+    CAGradientLayer* _gradientLayer;
 
 }
 
@@ -31,6 +33,7 @@
         self.menuItems = menuItems;
         CGFloat current_x = 0;
         CGFloat current_y = 0;
+        CGFloat menu_item_width = [[self.menuItems objectAtIndex:0] frame].size.width;
         for(int i =0 ; i < [self.menuItems count];i++)
             {
                 //NSLog(@"the item number is : %d",i);
@@ -54,7 +57,22 @@
         content_size.height= menu_item_height;
         [self setContentSize:content_size];
         [self setShowsHorizontalScrollIndicator:NO];
-        //self.delegate = self;
+        self.delegate = self;
+        [self setBackgroundColor:[UIColor peterRiverColor]];
+        
+        _gradientLayer.colors = @[(id)[[UIColor colorWithWhite:0.6f alpha:0.5f] CGColor],
+                                  (id)[[UIColor colorWithWhite:0.6f alpha:0.6f] CGColor],
+                                  (id)[[UIColor colorWithWhite:0.6f alpha:0.6f] CGColor],
+                                  (id)[[UIColor colorWithWhite:0.6f alpha:0.5f] CGColor]];
+        _gradientLayer.locations = @[@0.00f, @0.01f, @0.95f, @1.00f];
+
+        CGRect gradientFrame = CGRectMake(scrollViewWindowWidth/2, 0, menu_item_width, menu_item_height);
+        UIView * gradientView = [[UIView alloc] initWithFrame:gradientFrame];
+        _gradientLayer.bounds = gradientView.bounds;
+        [[gradientView layer]addSublayer: _gradientLayer];
+        [self addSubview:gradientView];
+      
+        
 
     }
     
@@ -74,7 +92,8 @@
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
 
-
+    NSLog(@"in scroll view did end decelerating");
+    [self computeCenter];
 
 
 
@@ -82,54 +101,145 @@
 -(void)computeCenter
 {
 
-    NSLog(@"calling the scrollViewDidEndDragging");
-    // NSLog(@"the x -content offset right now is  : %f",[self contentOffset].x);
-    CGFloat half_screen_width = [[UIScreen mainScreen] bounds].size.width/2.0;
-    CGFloat content_offset_item = [self contentOffset].x+half_screen_width;
-    CGFloat center_item_index;
-    NSArray* items =  [self  menuItems];
-    DGMenuItem* center_item= [items objectAtIndex:0];
-    CGFloat min_offset= fabs(content_offset_item);
-    CGFloat item_width = [center_item frame].size.width;
     
-    for(int i = 0 ; i <[items count];i++)
+    CGFloat x_offset = [self contentOffset].x;
+    CGFloat item_width = [[[self menuItems] objectAtIndex:0]frame].size.width;
+    
+    if(x_offset>0)
     {
-        //compute the content offset of this item
+        int numberOfItemsOfScreen = x_offset/item_width;
+        int numberOfItemsPartiallyOfScreen = (int)x_offset % (int)item_width;
         
-        content_offset_item = content_offset_item-item_width;
-        item_width= [[items objectAtIndex:i] frame].size.width;
-        if(fabs(content_offset_item)<min_offset)
+        if(numberOfItemsPartiallyOfScreen!=0)
         {
-            //  NSLog(@"hitting the for loop");
-            min_offset =fabs(content_offset_item);
-            center_item = [items objectAtIndex:i];
-            center_item_index=i;
-            //NSLog(@"the center item index is : %d",[center_item index]);
+            int items_count=[[self menuItems] count];
+            if(numberOfItemsOfScreen+1<items_count)
+            {
+                int i = numberOfItemsOfScreen+1;
+                DGMenuItem* candidate = [[self menuItems] objectAtIndex:i];
+                CGFloat x_min = (numberOfItemsOfScreen*item_width)-x_offset;
+                CGFloat x_max = x_min+[candidate frame].size.width;
+                CGFloat screen_x_center = [[UIScreen mainScreen]bounds].size.width/2.0;
+                i++;
+                
+                while(!(x_min < screen_x_center && screen_x_center< x_max)&&i<items_count)
+                {
+                    candidate = [[self menuItems] objectAtIndex:i];
+                    x_min = x_max;
+                    x_max = x_min+[candidate frame].size.width;
+                    i++;
+                    
+                }
+                
+                if(x_min < screen_x_center && screen_x_center< x_max)
+                {
+                    //found the candidate. Now align it to the center.
+                    CGFloat item_center_x_position = x_min+item_width/2.0;
+                    if(item_center_x_position>screen_x_center)
+                    {
+                        CGFloat delta_x = item_center_x_position-screen_x_center;
+                        CGPoint offset;
+                        offset.x = [self contentOffset].x+delta_x;
+                        offset.y = 0;
+                        
+                        [self setContentOffset:offset animated:YES];
+                        
+                        
+                    }
+                    else if(item_center_x_position<screen_x_center)
+                    {
+                        CGFloat delta_x = screen_x_center-item_center_x_position;
+                        CGPoint offset;
+                        offset.x = [self contentOffset].x-delta_x;
+                        offset.y = 0;
+                        [self setContentOffset:offset animated:YES];
+                        
+                    }
+                    
+                    
+                }
+                
+                
+            }
+            
+            
+        }
+        else
+        {
+            
+            
+            int items_count=[[self menuItems] count];
+            if(numberOfItemsOfScreen<items_count)
+            {
+                int i = numberOfItemsOfScreen;
+                DGMenuItem* candidate = [[self menuItems] objectAtIndex:i];
+                CGFloat x_min = (numberOfItemsOfScreen*item_width)-x_offset;
+                CGFloat x_max = x_min+[candidate frame].size.width;
+                CGFloat screen_x_center = [[UIScreen mainScreen]bounds].size.width/2.0;
+                i++;
+                
+                while(!(x_min < screen_x_center && screen_x_center< x_max)&&i<items_count)
+                {
+                    candidate = [[self menuItems] objectAtIndex:i];
+                    x_min = x_max;
+                    x_max = x_min+[candidate frame].size.width;
+                    i++;
+                    
+                }
+                
+                if(x_min < screen_x_center && screen_x_center< x_max)
+                {
+                    //found the candidate. Now align it to the center.
+                    CGFloat item_center_x_position = x_min+item_width/2.0;
+                    if(item_center_x_position>screen_x_center)
+                    {
+                        CGFloat delta_x = item_center_x_position-screen_x_center;
+                        CGPoint offset;
+                        offset.x = [self contentOffset].x+delta_x;
+                        offset.y = 0;
+                        
+                        [self setContentOffset:offset animated:YES];
+                        
+                        
+                    }
+                    else if(item_center_x_position<screen_x_center)
+                    {
+                        CGFloat delta_x = screen_x_center-item_center_x_position;
+                        CGPoint offset;
+                        offset.x = [self contentOffset].x-delta_x;
+                        offset.y = 0;
+                        [self  setContentOffset:offset animated:YES];
+                        
+                    }
+                    
+                    
+                }
+                
+                
+            }
+            
+            
             
         }
         
+        
+        
+        
+        
+        
     }
-    //animate the contentview so that the center item is in the center
+    else
+    {
+        CGPoint offset;
+        offset.x = 0;
+        offset.y = 0;
+        
+        [self setContentOffset:offset animated:YES];
+        
+    }
     
-    //the x_co-or of center_item
     
-    CGFloat x = half_screen_width-[center_item frame].size.width/2.0;
-    CGFloat i_items_width = center_item_index*(item_width);
-    CGPoint offset;
-    offset.x = i_items_width-x;
-    offset.y = 0;
-    [self setContentOffset:offset animated:YES];
-
-
-
-
-
-
-
-
-
-
-
+    
 
 
 }

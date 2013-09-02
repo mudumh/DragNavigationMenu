@@ -11,6 +11,7 @@
 #import "DGViewController.h"
 #import "DGMenuItem.h"
 #import "DGMenu.h"
+#import "UIColor+FlatUI.h"
 
 @implementation DGAppDelegate
 
@@ -20,28 +21,29 @@
     // Override point for customization after application launch.
     self.viewController = [[DGViewController alloc] initWithNibName:@"DGViewController" bundle:nil];
     
-    CGFloat width = 150;
+    CGFloat width = 90;
     CGFloat height = 50;
     
-    DGMenuItem * menu_item_1 = [[DGMenuItem alloc] initMenuItemWithTitle:@"1" width:width height:height buttonColor:[UIColor grayColor] titleFont:nil titleFontColor:[UIColor whiteColor]];
+    DGMenuItem * menu_item_1 = [[DGMenuItem alloc] initMenuItemWithTitle:@"1" width:width height:height buttonColor:[UIColor peterRiverColor] titleFont:nil titleFontColor:[UIColor whiteColor]];
     
-    DGMenuItem * menu_item_2 = [[DGMenuItem alloc] initMenuItemWithTitle:@"2" width:width height:height buttonColor:[UIColor greenColor] titleFont:nil titleFontColor:[UIColor whiteColor]];
+    DGMenuItem * menu_item_2 = [[DGMenuItem alloc] initMenuItemWithTitle:@"2" width:width height:height buttonColor:[UIColor peterRiverColor] titleFont:nil titleFontColor:[UIColor whiteColor]];
     
-    DGMenuItem * menu_item_3 = [[DGMenuItem alloc] initMenuItemWithTitle:@"3" width:width height:height buttonColor:[UIColor purpleColor] titleFont:nil titleFontColor:[UIColor whiteColor]];
+    DGMenuItem * menu_item_3 = [[DGMenuItem alloc] initMenuItemWithTitle:@"3" width:width height:height buttonColor:[UIColor peterRiverColor] titleFont:nil titleFontColor:[UIColor whiteColor]];
     
-    DGMenuItem * menu_item_4 = [[DGMenuItem alloc] initMenuItemWithTitle:@"4" width:width height:height buttonColor:[UIColor blackColor] titleFont:nil titleFontColor:[UIColor whiteColor]];
+    DGMenuItem * menu_item_4 = [[DGMenuItem alloc] initMenuItemWithTitle:@"4" width:width height:height buttonColor:[UIColor peterRiverColor] titleFont:nil titleFontColor:[UIColor whiteColor]];
 
-    DGMenuItem * menu_item_5 = [[DGMenuItem alloc] initMenuItemWithTitle:@"5" width:width height:height buttonColor:[UIColor brownColor] titleFont:nil titleFontColor:[UIColor whiteColor]];
+    DGMenuItem * menu_item_5 = [[DGMenuItem alloc] initMenuItemWithTitle:@"5" width:width height:height buttonColor:[UIColor peterRiverColor] titleFont:nil titleFontColor:[UIColor whiteColor]];
     
-    DGMenuItem * menu_item_6 = [[DGMenuItem alloc] initMenuItemWithTitle:@"6" width:width height:height buttonColor:[UIColor magentaColor] titleFont:nil titleFontColor:[UIColor whiteColor]];
+    DGMenuItem * menu_item_6 = [[DGMenuItem alloc] initMenuItemWithTitle:@"6" width:width height:height buttonColor:[UIColor peterRiverColor] titleFont:nil titleFontColor:[UIColor whiteColor]];
     
-    DGMenuItem * menu_item_7 = [[DGMenuItem alloc] initMenuItemWithTitle:@"7" width:width height:height buttonColor:[UIColor blueColor] titleFont:nil titleFontColor:[UIColor whiteColor]];
+    DGMenuItem * menu_item_7 = [[DGMenuItem alloc] initMenuItemWithTitle:@"7" width:width height:height buttonColor:[UIColor peterRiverColor] titleFont:nil titleFontColor:[UIColor whiteColor]];
+    
     CGFloat scrollViewWindowWidth =  [[UIScreen mainScreen] bounds].size.width;
     // scrollViewWindowHeight should ideally be the same as the height of a menu item.
     CGFloat scrollViewWindowHeight =  50;
     
     DGMenu* menu = [[DGMenu alloc] initWithMenuItems:[[NSArray alloc] initWithObjects:menu_item_1,menu_item_2,menu_item_3,menu_item_4,menu_item_5,menu_item_6,menu_item_7,nil]];
-    [menu setPagingEnabled:YES];
+   // [menu setPagingEnabled:YES];
     self.viewController.menu = menu;
     menu.menuDelegate = self.viewController;
     
