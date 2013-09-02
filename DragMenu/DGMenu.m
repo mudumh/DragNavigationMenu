@@ -19,7 +19,9 @@
 
 
 
--(id)initWithMenuItems:(NSArray *) menuItems 
+-(id)initWithMenuItems:(NSArray *) menuItems
+
+NSLSDASDF
 {
     DGMenuItem * any_item = [menuItems objectAtIndex:0];
     CGFloat menu_item_height =    [any_item frame].size.height;
