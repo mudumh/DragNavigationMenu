@@ -38,9 +38,9 @@
     
     DGMenuItem * menu_item_7 = [[DGMenuItem alloc] initMenuItemWithTitle:@"7" width:width height:height buttonColor:[UIColor peterRiverColor] titleFont:nil titleFontColor:[UIColor whiteColor]];
     
-    CGFloat scrollViewWindowWidth =  [[UIScreen mainScreen] bounds].size.width;
+    
     //scrollViewWindowHeight should ideally be the same as the height of a menu item.
-    CGFloat scrollViewWindowHeight =  50;
+    
     
     DGMenu* menu = [[DGMenu alloc] initWithMenuItems:[[NSArray alloc] initWithObjects:menu_item_1,menu_item_2,menu_item_3,menu_item_4,menu_item_5,menu_item_6,menu_item_7,nil]];
    // [menu setPagingEnabled:YES];

@@ -14,9 +14,12 @@
 @implementation DGMenu
 {
     CAGradientLayer* _gradientLayer;
-
+    CGFloat gap;
+    CGFloat menu_item_width ;
+    CGFloat scrollViewWindowWidth;
+    
 }
-@synthesize scrollView;
+@synthesize scrollView,menuDelegate;
 
 
 
@@ -26,7 +29,7 @@
 {
     DGMenuItem * any_item = [menuItems objectAtIndex:0];
     CGFloat menu_item_height =    [any_item frame].size.height;
-    CGFloat scrollViewWindowWidth =  [[UIScreen mainScreen] bounds].size.width;
+    scrollViewWindowWidth =  [[UIScreen mainScreen] bounds].size.width;
     CGRect frame = CGRectMake(0, 0, scrollViewWindowWidth, menu_item_height);
 
     
@@ -36,7 +39,7 @@
         self.scrollView = [[UIScrollView alloc] initWithFrame:frame];
         self.menuItems = menuItems;
         
-        CGFloat menu_item_width = [[self.menuItems objectAtIndex:0] frame].size.width;
+        menu_item_width = [[self.menuItems objectAtIndex:0] frame].size.width;
         CGFloat current_x = 0+scrollViewWindowWidth/2.0-menu_item_width/2.0;
         CGFloat current_y = 0;
         NSLog(@"!!! The menu item width is : %f",menu_item_width);
@@ -87,6 +90,8 @@
         _gradientLayer.position = position;
         [[self layer] addSublayer:_gradientLayer];
       
+       self->gap= scrollViewWindowWidth/2.0-menu_item_width/2.0;
+       self->menu_item_width = [[self.menuItems objectAtIndex:0] frame].size.width;
         
 
     }
@@ -97,7 +102,55 @@
 -(void)itemSelected:(DGMenuItem*)item atItemIndex:(NSInteger)indexinArray
 {
     
+    NSLog(@"in item selected");
+    [self shiftToCenter:item atIndex:indexinArray];
     [[self menuDelegate] selectedMenuItem:item atIndex:indexinArray];
+
+}
+
+-(void)shiftToCenter:(DGMenuItem*)item atIndex:(NSInteger)indexInArray
+{
+    NSLog(@"in shiftToCenter ");
+    CGFloat x_offset = [self scrollView].contentOffset.x;
+    NSLog(@"the x_offset is : %f",x_offset);
+   
+    if(x_offset>=0)
+    {
+        NSLog(@"in x_offset ");
+    
+        CGFloat current_x_of_item = gap+indexInArray*(menu_item_width)-x_offset;
+        CGFloat target_x = scrollViewWindowWidth/2.0-menu_item_width/2.0;
+        CGFloat delta_x=0;
+        CGPoint offset;
+        if(current_x_of_item > target_x)
+        {
+            NSLog(@"in if ");
+            delta_x = current_x_of_item-target_x;
+            offset.x = delta_x+[[self scrollView] contentOffset].x;
+            offset.y=[[self scrollView] contentOffset].y;
+            [[self scrollView] setContentOffset:offset animated:YES];
+            
+        
+        }
+        else if(current_x_of_item < target_x)
+        {
+        
+            NSLog(@"in if else ");
+            delta_x = target_x-current_x_of_item;
+
+            offset.x = [[self scrollView] contentOffset].x-delta_x;
+            offset.y=[[self scrollView] contentOffset].y;
+            [[self scrollView] setContentOffset:offset animated:YES];
+        
+        
+        
+        }
+        
+    
+    
+    }
+
+
 
 }
 -(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
@@ -117,12 +170,12 @@
 
 {
      NSLog(@"in compute center");
-    CGFloat scrollViewWindowWidth =  [[UIScreen mainScreen] bounds].size.width;
-    CGFloat menu_item_width = [[self.menuItems objectAtIndex:0] frame].size.width;
+    
+   
 //   CGFloat x_offset = [self.scrollView contentOffset].x-scrollViewWindowWidth/2.0-menu_item_width/2.0;
     CGFloat x_offset = [self.scrollView contentOffset].x;
     CGFloat item_width = [[[self menuItems] objectAtIndex:0]frame].size.width;
-    CGFloat gap =  scrollViewWindowWidth/2.0-menu_item_width/2.0;
+  
     NSLog(@"the gap is : %f",gap);
     if(x_offset>0)
     {
@@ -214,6 +267,8 @@
                         NSLog(@"!!!!Hit 1");
                         [self.scrollView setContentOffset:offset animated:YES];
                         
+                       
+                        
                         
                     }
                     else if(item_center_x_position < screen_x_center)
@@ -225,8 +280,14 @@
                         offset.x = [self.scrollView contentOffset].x-delta_x;
                         offset.y = 0;
                         [self.scrollView setContentOffset:offset animated:YES];
+                        for(int i = 0 ; i <20000;i++)
+                        {
+                        
+                        }
+                       
                         
                     }
+                    [[self menuDelegate] selectedMenuItem:candidate atIndex:candidate.index];
                     
                     
                 }
@@ -292,6 +353,7 @@
                         
                         NSLog(@"!!!!Hit 3");
                         [self.scrollView setContentOffset:offset animated:YES];
+                         
                         
                         
                     }
@@ -304,7 +366,9 @@
                         NSLog(@"!!!!Hit 4");
                         [self.scrollView  setContentOffset:offset animated:YES];
                         
+                        
                     }
+                    [[self menuDelegate] selectedMenuItem:candidate atIndex:candidate.index];
                     
                     
                 }
@@ -317,14 +381,9 @@
         }
         
         
-        
-        
-        
-        
     }
     //offset it negative
     else
-        
         
     {
         NSLog(@"in x_offset<0");
@@ -335,6 +394,7 @@
         
         NSLog(@"!!!!Hit 5");
         [self.scrollView setContentOffset:offset animated:YES];
+       // [[self menuDelegate] selectedMenuItem:[[self menuItems] objectAtIndex:0] atIndex:0];
         
     }
     
