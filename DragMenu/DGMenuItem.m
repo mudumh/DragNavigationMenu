@@ -11,7 +11,7 @@
 #import "UIFont+FlatUI.h"
 
 @implementation DGMenuItem
-@synthesize menu;
+@synthesize menu,menuTitle;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -43,7 +43,8 @@
         NSLog(@"the color is : %@",color);
         FUIButton* myButton = (FUIButton*)self;
         //myButton.buttonColor = [UIColor turquoiseColor];
-        myButton.titleLabel.text = title;
+        
+        NSLog(@"the item title is : %@",myButton.titleLabel.text);
         myButton.buttonColor = color;
         myButton.shadowColor = color;
         myButton.shadowHeight = 0.0f;
@@ -74,6 +75,7 @@
         [myButton addTarget:self
                      action:@selector(buttonTapped)
            forControlEvents:UIControlEventTouchDown];
+        self.menuTitle=title;
         
     }
     

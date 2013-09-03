@@ -80,7 +80,7 @@
 - (IBAction)pressed:(id)sender
 {
     
-    CGFloat x_offset = [[self menu] contentOffset].x;
+    CGFloat x_offset = [[[self menu] scrollView] contentOffset].x;
     CGFloat item_width = [[[[self menu] menuItems] objectAtIndex:0]frame].size.width;
     
     if(x_offset>0)
@@ -117,10 +117,10 @@
                     {
                         CGFloat delta_x = item_center_x_position-screen_x_center;
                         CGPoint offset;
-                        offset.x = [[self menu] contentOffset].x+delta_x;
+                        offset.x = [[[self menu] scrollView] contentOffset].x+delta_x;
                         offset.y = 0;
                         
-                        [[self menu] setContentOffset:offset animated:YES];
+                        [[[self menu] scrollView] setContentOffset:offset animated:YES];
                     
                     
                     }
@@ -128,9 +128,9 @@
                     {
                         CGFloat delta_x = screen_x_center-item_center_x_position;
                         CGPoint offset;
-                        offset.x = [[self menu] contentOffset].x-delta_x;
+                        offset.x = [[[self menu] scrollView] contentOffset].x-delta_x;
                         offset.y = 0;
-                        [[self menu] setContentOffset:offset animated:YES];
+                        [[[self menu] scrollView] setContentOffset:offset animated:YES];
                     
                     }
                     
@@ -173,10 +173,10 @@
                         {
                             CGFloat delta_x = item_center_x_position-screen_x_center;
                             CGPoint offset;
-                            offset.x = [[self menu] contentOffset].x+delta_x;
+                            offset.x = [[[self menu] scrollView] contentOffset].x+delta_x;
                             offset.y = 0;
                             
-                            [[self menu] setContentOffset:offset animated:YES];
+                            [[[self menu] scrollView] setContentOffset:offset animated:YES];
                             
                             
                         }
@@ -184,9 +184,9 @@
                         {
                             CGFloat delta_x = screen_x_center-item_center_x_position;
                             CGPoint offset;
-                            offset.x = [[self menu] contentOffset].x-delta_x;
+                            offset.x = [[[self menu] scrollView] contentOffset].x-delta_x;
                             offset.y = 0;
-                            [[self menu] setContentOffset:offset animated:YES];
+                            [[[self menu] scrollView] setContentOffset:offset animated:YES];
                             
                         }
                         
@@ -212,7 +212,7 @@ else
     offset.x = 0;
     offset.y = 0;
 
-    [[self menu] setContentOffset:offset animated:YES];
+    [[[self menu] scrollView] setContentOffset:offset animated:YES];
 
 }
     

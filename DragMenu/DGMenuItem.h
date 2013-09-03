@@ -20,6 +20,7 @@
 
 @property id<DGMenuItemDelegate> menu;
 @property NSInteger index;
+@property NSString * menuTitle;
 
 -(id)initMenuItemWithTitle:(NSString*)title width:(CGFloat)width height:(CGFloat)height buttonColor:(UIColor*)color titleFont:(UIFont*)font titleFontColor:(UIColor *)fontColor;
 

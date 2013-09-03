@@ -15,9 +15,10 @@
 
 @end
 
-@interface DGMenu : UIScrollView<UIScrollViewDelegate,DGMenuItemDelegate>
+@interface DGMenu : UIView<UIScrollViewDelegate,DGMenuItemDelegate>
 
 @property NSArray * menuItems;
+@property UIScrollView* scrollView;
 @property(nonatomic,strong) id<DGMenuDelegate> menuDelegate;
 
 -(id)initWithMenuItems:(NSArray *) menuItems ;
