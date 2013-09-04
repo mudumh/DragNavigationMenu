@@ -21,8 +21,9 @@
 @property id<DGMenuItemDelegate> menu;
 @property NSInteger index;
 @property NSString * menuTitle;
+@property (nonatomic)UIViewController* menuItemController;
 
--(id)initMenuItemWithTitle:(NSString*)title width:(CGFloat)width height:(CGFloat)height buttonColor:(UIColor*)color titleFont:(UIFont*)font titleFontColor:(UIColor *)fontColor;
+-(id)initMenuItemWithTitle:(NSString*)title width:(CGFloat)width height:(CGFloat)height buttonColor:(UIColor*)color titleFont:(UIFont*)font titleFontColor:(UIColor *)fontColor withViewController:(UIViewController*)controller;
 
 @end
 

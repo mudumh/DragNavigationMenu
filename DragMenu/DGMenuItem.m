@@ -11,7 +11,7 @@
 #import "UIFont+FlatUI.h"
 
 @implementation DGMenuItem
-@synthesize menu,menuTitle;
+@synthesize menu,menuTitle,menuItemController;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -31,7 +31,7 @@
 }
 
 
--(id)initMenuItemWithTitle:(NSString*)title width:(CGFloat)width height:(CGFloat)height buttonColor:(UIColor*)color titleFont:(UIFont*)font titleFontColor:(UIColor *)fontColor
+-(id)initMenuItemWithTitle:(NSString*)title width:(CGFloat)width height:(CGFloat)height buttonColor:(UIColor*)color titleFont:(UIFont*)font titleFontColor:(UIColor *)fontColor withViewController:(UIViewController*)controller
 {
 
 
@@ -76,6 +76,7 @@
                      action:@selector(buttonTapped)
            forControlEvents:UIControlEventTouchDown];
         self.menuTitle=title;
+        self.menuItemController = controller;
         
     }
     

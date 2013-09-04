@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "DGMenuItem.h"
+@class DGNavigationController;
 @class DGMenuItem;
 
 @protocol DGMenuDelegate
@@ -20,8 +21,10 @@
 @property NSArray * menuItems;
 @property UIScrollView* scrollView;
 @property(nonatomic,strong) id<DGMenuDelegate> menuDelegate;
+@property(nonatomic,weak) DGNavigationController* parent_ViewController;
 
 -(id)initWithMenuItems:(NSArray *) menuItems ;
+
 
 
 @end

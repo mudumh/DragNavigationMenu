@@ -9,11 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @class DGViewController;
+@class DGNavigationController;
 
 @interface DGAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property (strong, nonatomic) DGViewController *viewController;
+@property (strong, nonatomic) DGNavigationController *viewController;
 
 @end

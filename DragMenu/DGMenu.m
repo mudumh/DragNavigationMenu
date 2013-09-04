@@ -10,6 +10,7 @@
 #import "DGMenuItem.h"
 #import <QuartzCore/QuartzCore.h>
 #import "UIColor+FlatUI.h"
+#import "DGNavigationController.h"
 
 @implementation DGMenu
 {
@@ -17,9 +18,11 @@
     CGFloat gap;
     CGFloat menu_item_width ;
     CGFloat scrollViewWindowWidth;
+    CGFloat screenWidth;
+    UIScrollView* viewControllerScrollView;
     
 }
-@synthesize scrollView,menuDelegate;
+@synthesize scrollView,menuDelegate,parent_ViewController;
 
 
 
@@ -29,7 +32,8 @@
 {
     DGMenuItem * any_item = [menuItems objectAtIndex:0];
     CGFloat menu_item_height =    [any_item frame].size.height;
-    scrollViewWindowWidth =  [[UIScreen mainScreen] bounds].size.width;
+    screenWidth=[[UIScreen mainScreen] bounds].size.width;
+    scrollViewWindowWidth =  screenWidth;
     CGRect frame = CGRectMake(0, 0, scrollViewWindowWidth, menu_item_height);
 
     
@@ -101,22 +105,34 @@
 
 -(void)itemSelected:(DGMenuItem*)item atItemIndex:(NSInteger)indexinArray
 {
-    
-    NSLog(@"in item selected");
+    viewControllerScrollView=[self fetchViewControllerScrollView];
     [self shiftToCenter:item atIndex:indexinArray];
     [[self menuDelegate] selectedMenuItem:item atIndex:indexinArray];
 
 }
+-(UIScrollView*)fetchViewControllerScrollView
+{
+    if(viewControllerScrollView==nil)
+    {
+        viewControllerScrollView=[[self parent_ViewController] viewControllersScrollView];
+    }
+    return viewControllerScrollView;
+    
 
+}
 -(void)shiftToCenter:(DGMenuItem*)item atIndex:(NSInteger)indexInArray
 {
-    NSLog(@"in shiftToCenter ");
+    
+    
+    CGPoint viewContentOffset;
+
+    
     CGFloat x_offset = [self scrollView].contentOffset.x;
-    NSLog(@"the x_offset is : %f",x_offset);
+    
    
     if(x_offset>=0)
     {
-        NSLog(@"in x_offset ");
+        
     
         CGFloat current_x_of_item = gap+indexInArray*(menu_item_width)-x_offset;
         CGFloat target_x = scrollViewWindowWidth/2.0-menu_item_width/2.0;
@@ -124,32 +140,34 @@
         CGPoint offset;
         if(current_x_of_item > target_x)
         {
-            NSLog(@"in if ");
+           
             delta_x = current_x_of_item-target_x;
             offset.x = delta_x+[[self scrollView] contentOffset].x;
             offset.y=[[self scrollView] contentOffset].y;
             [[self scrollView] setContentOffset:offset animated:YES];
+            
+            viewContentOffset.x= indexInArray*screenWidth;
+            viewContentOffset.y= [viewControllerScrollView contentOffset].y;
+            [viewControllerScrollView setContentOffset:viewContentOffset animated:YES];
+           
             
         
         }
         else if(current_x_of_item < target_x)
         {
         
-            NSLog(@"in if else ");
             delta_x = target_x-current_x_of_item;
-
+            viewContentOffset.x= (indexInArray)*screenWidth;
+            viewContentOffset.y= [viewControllerScrollView contentOffset].y;
             offset.x = [[self scrollView] contentOffset].x-delta_x;
             offset.y=[[self scrollView] contentOffset].y;
             [[self scrollView] setContentOffset:offset animated:YES];
-        
+            [viewControllerScrollView setContentOffset:viewContentOffset animated:YES];
         
         
         }
-        
-    
-    
+       
     }
-
 
 
 }
@@ -160,27 +178,22 @@
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
 
-    NSLog(@"in scroll view did end decelerating");
     [self computeCenter];
-
-
 
 }
 -(void)computeCenter
 
 {
-     NSLog(@"in compute center");
-    
-   
-//   CGFloat x_offset = [self.scrollView contentOffset].x-scrollViewWindowWidth/2.0-menu_item_width/2.0;
     CGFloat x_offset = [self.scrollView contentOffset].x;
     CGFloat item_width = [[[self menuItems] objectAtIndex:0]frame].size.width;
-  
-    NSLog(@"the gap is : %f",gap);
+    viewControllerScrollView=[self fetchViewControllerScrollView];
+
     if(x_offset>0)
     {
-        NSLog(@"in x_offset>0");
+
         int numberOfItemsOfScreen = (x_offset-gap)/item_width;
+        
+        
         BOOL isthereAnItemPartiallyOfScreen;
         if(x_offset<gap)
         {
@@ -214,24 +227,36 @@
             NSLog(@"items_count is : %d",items_count);
 
             
+            
             if(numberOfItemsOfScreen+1<items_count)
             {
                 
                 NSLog(@"in numberOfItemsOfScreen+1<items_count");
-                int i = numberOfItemsOfScreen+1;
+                //int i = numberOfItemsOfScreen+1;
+                //int i = numberOfItemsOfScreen+1;
+                int i = 0;
                 DGMenuItem* candidate = [[self menuItems] objectAtIndex:i];
                 //CGFloat x_min = (numberOfItemsOfScreen*item_width)-x_offset;
                 CGFloat x_min = item_width-(((int)x_offset-(int)gap)%(int)item_width);
                 CGFloat x_max = x_min+[candidate frame].size.width;
                 CGFloat screen_x_center = [[UIScreen mainScreen]bounds].size.width/2.0;
+                NSLog(@"------------------------------------------------------");
+                NSLog(@"the x offset is : %f",x_offset);
+                NSLog(@"the gap is : %f",gap);
+                NSLog(@"the item_width is : %f",item_width);
+                NSLog(@"the numberOfItemsOfScreen is : %d",numberOfItemsOfScreen);
+                
+                NSLog(@"value is i ,before the while is : %d",i);
+
                 NSLog(@"the value of x_min is %f",x_min);
                 NSLog(@"the value of x_max is %f",x_max);
                 NSLog(@"the value of screen_center is : %f",screen_x_center);
-                NSLog(@"the x offset is : %f",x_offset);
-                NSLog(@"the gap is : %f",gap);
-                NSLog(@"numberofItems off screen : %d",(int)x_offset- (int)gap % (int)item_width);
+              NSLog(@"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
                 
-                NSLog(@"value is i ,before the while is : %d",i);
+                //NSLog(@"the gap is : %f",gap);
+                //NSLog(@"numberofItems off screen : %d",(int)x_offset- (int)gap % (int)item_width);
+                
+                
                 while(!(x_min < screen_x_center && screen_x_center< x_max)&&i<items_count)
                 {
                    NSLog(@"in while 1");
@@ -239,10 +264,7 @@
                     x_min = x_max;
                     NSLog(@"the value of x_min is %f",x_min);
                     x_max = x_min+[candidate frame].size.width;
-                    if(x_min <= screen_x_center && screen_x_center<= x_max)
-                    {
-                        break;
-                    }
+                   
                     i++;
                     
                 }
@@ -267,10 +289,14 @@
                         NSLog(@"!!!!Hit 1");
                         [self.scrollView setContentOffset:offset animated:YES];
                         
-                       
                         
                         
                     }
+                    
+                    
+                    
+                    
+                    
                     else if(item_center_x_position < screen_x_center)
                         
                     {
@@ -284,10 +310,22 @@
                         {
                         
                         }
+                        
                        
                         
                     }
-                    [[self menuDelegate] selectedMenuItem:candidate atIndex:candidate.index];
+                    CGPoint viewOffset;
+                    NSLog(@"the candidate index is : %d",[candidate index]);
+                    NSLog(@"the candidate menu title is : %@",[candidate menuTitle]);
+                    viewOffset.x = [candidate index]*screenWidth;
+                    NSLog(@"the view offset is : %f",viewOffset.x);
+                    viewOffset.y = [viewControllerScrollView contentOffset].y;
+                    NSLog(@"the view controller scroll view is : %@",viewControllerScrollView);
+                    [viewControllerScrollView setContentOffset:viewOffset animated:YES];
+                    
+                    
+                    
+                    //[[self menuDelegate] selectedMenuItem:candidate atIndex:candidate.index];
                     
                     
                 }
@@ -329,7 +367,7 @@
                 NSLog(@"numberofItems off screen : %d",(int)x_offset- (int)gap % (int)item_width);
                 NSLog(@"section 3");
                 
-                while(!(x_min < screen_x_center && screen_x_center < x_max)&&i<items_count)
+                while(!(x_min <= screen_x_center && screen_x_center <= x_max)&&i<items_count)
                 {
                     candidate = [[self menuItems] objectAtIndex:i];
                     x_min = x_max;
@@ -369,7 +407,10 @@
                         
                     }
                     [[self menuDelegate] selectedMenuItem:candidate atIndex:candidate.index];
-                    
+                    CGPoint viewOffset;
+                    viewOffset.x = [candidate index]*screenWidth;
+                    viewOffset.y = [viewControllerScrollView contentOffset].y;
+                    [viewControllerScrollView setContentOffset:viewOffset animated:YES];
                     
                 }
                 
@@ -382,7 +423,7 @@
         
         
     }
-    //offset it negative
+
     else
         
     {
@@ -394,7 +435,10 @@
         
         NSLog(@"!!!!Hit 5");
         [self.scrollView setContentOffset:offset animated:YES];
-       // [[self menuDelegate] selectedMenuItem:[[self menuItems] objectAtIndex:0] atIndex:0];
+        CGPoint viewOffset;
+        viewOffset.x = 0;
+        viewOffset.y = [viewControllerScrollView contentOffset].y;
+        [viewControllerScrollView setContentOffset:viewOffset animated:YES];
         
     }
     
