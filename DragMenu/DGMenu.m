@@ -237,8 +237,8 @@
                 int i = 0;
                 DGMenuItem* candidate = [[self menuItems] objectAtIndex:i];
                 //CGFloat x_min = (numberOfItemsOfScreen*item_width)-x_offset;
-                CGFloat x_min = item_width-(((int)x_offset-(int)gap)%(int)item_width);
-                CGFloat x_max = x_min+[candidate frame].size.width;
+               // CGFloat x_min = item_width-(((int)x_offset-(int)gap)%(int)item_width);
+                //CGFloat x_max = x_min+[candidate frame].size.width;
                 CGFloat screen_x_center = [[UIScreen mainScreen]bounds].size.width/2.0;
                 NSLog(@"------------------------------------------------------");
                 NSLog(@"the x offset is : %f",x_offset);
@@ -248,24 +248,27 @@
                 
                 NSLog(@"value is i ,before the while is : %d",i);
 
-                NSLog(@"the value of x_min is %f",x_min);
-                NSLog(@"the value of x_max is %f",x_max);
+                
                 NSLog(@"the value of screen_center is : %f",screen_x_center);
               NSLog(@"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
                 
                 //NSLog(@"the gap is : %f",gap);
                 //NSLog(@"numberofItems off screen : %d",(int)x_offset- (int)gap % (int)item_width);
                 
-                
+                CGFloat x_min= - (x_offset)+gap;
+                CGFloat x_max = x_min+[candidate frame].size.width;
+                NSLog(@"the value of x_min is %f",x_min);
+                NSLog(@"the value of x_max is %f",x_max);
                 while(!(x_min < screen_x_center && screen_x_center< x_max)&&i<items_count)
                 {
                    NSLog(@"in while 1");
+                    i++;
                     candidate = [[self menuItems] objectAtIndex:i];
                     x_min = x_max;
                     NSLog(@"the value of x_min is %f",x_min);
                     x_max = x_min+[candidate frame].size.width;
                    
-                    i++;
+                    
                     
                 }
                 if(i>=items_count)
