@@ -21,6 +21,7 @@ You will need to copy the following from DragNavigationMenu to set up the contro
 5) Copy the all the fonts from the resources folder.
 
 You will need to link your binary with the following libraries :
+
 1)CoreText
 
 2) QuartzCore
