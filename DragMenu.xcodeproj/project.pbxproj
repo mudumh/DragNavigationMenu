@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3A1E6B0D17D1413F00AF70FC /* DGViewControllerGreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A1E6B0B17D1413F00AF70FC /* DGViewControllerGreenViewController.m */; };
-		3A1E6B0E17D1413F00AF70FC /* DGViewControllerGreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A1E6B0C17D1413F00AF70FC /* DGViewControllerGreenViewController.xib */; };
 		3A23E6A917D04FBD00A98656 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A23E6A817D04FBD00A98656 /* UIKit.framework */; };
 		3A23E6AB17D04FBD00A98656 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A23E6AA17D04FBD00A98656 /* Foundation.framework */; };
 		3A23E6AD17D04FBD00A98656 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A23E6AC17D04FBD00A98656 /* CoreGraphics.framework */; };
@@ -18,8 +16,6 @@
 		3A23E6BB17D04FBD00A98656 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A23E6BA17D04FBD00A98656 /* Default.png */; };
 		3A23E6BD17D04FBD00A98656 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A23E6BC17D04FBD00A98656 /* Default@2x.png */; };
 		3A23E6BF17D04FBD00A98656 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A23E6BE17D04FBD00A98656 /* Default-568h@2x.png */; };
-		3A23E6C217D04FBD00A98656 /* DGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A23E6C117D04FBD00A98656 /* DGViewController.m */; };
-		3A23E6C517D04FBD00A98656 /* DGViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A23E6C317D04FBD00A98656 /* DGViewController.xib */; };
 		3A23E6CD17D04FD800A98656 /* DGMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A23E6CC17D04FD800A98656 /* DGMenu.m */; };
 		3A23E6D017D04FEB00A98656 /* DGMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A23E6CF17D04FEB00A98656 /* DGMenuItem.m */; };
 		3A23E6D617D0FC4300A98656 /* FUIButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A23E6D517D0FC4300A98656 /* FUIButton.m */; };
@@ -52,9 +48,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3A1E6B0A17D1413F00AF70FC /* DGViewControllerGreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGViewControllerGreenViewController.h; sourceTree = "<group>"; };
-		3A1E6B0B17D1413F00AF70FC /* DGViewControllerGreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGViewControllerGreenViewController.m; sourceTree = "<group>"; };
-		3A1E6B0C17D1413F00AF70FC /* DGViewControllerGreenViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DGViewControllerGreenViewController.xib; sourceTree = "<group>"; };
 		3A23E6A517D04FBD00A98656 /* DragMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DragMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A23E6A817D04FBD00A98656 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3A23E6AA17D04FBD00A98656 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -68,9 +61,6 @@
 		3A23E6BA17D04FBD00A98656 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		3A23E6BC17D04FBD00A98656 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		3A23E6BE17D04FBD00A98656 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		3A23E6C017D04FBD00A98656 /* DGViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DGViewController.h; sourceTree = "<group>"; };
-		3A23E6C117D04FBD00A98656 /* DGViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DGViewController.m; sourceTree = "<group>"; };
-		3A23E6C417D04FBD00A98656 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DGViewController.xib; sourceTree = "<group>"; };
 		3A23E6CB17D04FD800A98656 /* DGMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGMenu.h; sourceTree = "<group>"; };
 		3A23E6CC17D04FD800A98656 /* DGMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGMenu.m; sourceTree = "<group>"; };
 		3A23E6CE17D04FEB00A98656 /* DGMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGMenuItem.h; sourceTree = "<group>"; };
@@ -162,23 +152,17 @@
 		3A23E6AE17D04FBD00A98656 /* DragMenu */ = {
 			isa = PBXGroup;
 			children = (
-				3A35AB1417D6880900C514C1 /* menuViews */,
+				3A35AB1417D6880900C514C1 /* ExampleViews */,
 				3A23E6E117D133DA00A98656 /* Resouces */,
 				3A23E6DA17D0FC8C00A98656 /* external components */,
 				3A23E6B717D04FBD00A98656 /* DGAppDelegate.h */,
 				3A23E6B817D04FBD00A98656 /* DGAppDelegate.m */,
 				3AADF81D17D67D68007846CC /* DGNavigationController.h */,
 				3AADF81E17D67D68007846CC /* DGNavigationController.m */,
-				3A23E6C017D04FBD00A98656 /* DGViewController.h */,
-				3A23E6C117D04FBD00A98656 /* DGViewController.m */,
-				3A23E6C317D04FBD00A98656 /* DGViewController.xib */,
 				3A23E6CE17D04FEB00A98656 /* DGMenuItem.h */,
 				3A23E6CF17D04FEB00A98656 /* DGMenuItem.m */,
 				3A23E6CB17D04FD800A98656 /* DGMenu.h */,
 				3A23E6CC17D04FD800A98656 /* DGMenu.m */,
-				3A1E6B0A17D1413F00AF70FC /* DGViewControllerGreenViewController.h */,
-				3A1E6B0B17D1413F00AF70FC /* DGViewControllerGreenViewController.m */,
-				3A1E6B0C17D1413F00AF70FC /* DGViewControllerGreenViewController.xib */,
 				3A23E6AF17D04FBD00A98656 /* Supporting Files */,
 			);
 			path = DragMenu;
@@ -230,7 +214,7 @@
 			name = Resouces;
 			sourceTree = "<group>";
 		};
-		3A35AB1417D6880900C514C1 /* menuViews */ = {
+		3A35AB1417D6880900C514C1 /* ExampleViews */ = {
 			isa = PBXGroup;
 			children = (
 				3AADF80417D67BB8007846CC /* VC1.h */,
@@ -249,7 +233,7 @@
 				3AADF81917D67CD2007846CC /* VC5.m */,
 				3AADF81A17D67CD3007846CC /* VC5.xib */,
 			);
-			name = menuViews;
+			name = ExampleViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,7 +292,6 @@
 				3A23E6BB17D04FBD00A98656 /* Default.png in Resources */,
 				3A23E6BD17D04FBD00A98656 /* Default@2x.png in Resources */,
 				3A23E6BF17D04FBD00A98656 /* Default-568h@2x.png in Resources */,
-				3A23E6C517D04FBD00A98656 /* DGViewController.xib in Resources */,
 				3A23E6E817D1341F00A98656 /* Lato-Black.ttf in Resources */,
 				3A23E6E917D1341F00A98656 /* Lato-BlackItalic.ttf in Resources */,
 				3A23E6EA17D1341F00A98656 /* Lato-Hairline.ttf in Resources */,
@@ -319,7 +302,6 @@
 				3A23E6F317D1342B00A98656 /* Lato-BoldItalic.ttf in Resources */,
 				3A23E6F417D1342B00A98656 /* Lato-Italic.ttf in Resources */,
 				3A23E6F517D1342B00A98656 /* Lato-Light.ttf in Resources */,
-				3A1E6B0E17D1413F00AF70FC /* DGViewControllerGreenViewController.xib in Resources */,
 				3AADF80817D67BB8007846CC /* VC1.xib in Resources */,
 				3AADF80D17D67BC3007846CC /* VC2.xib in Resources */,
 				3AADF81217D67BDF007846CC /* VC3.xib in Resources */,
@@ -337,14 +319,12 @@
 			files = (
 				3A23E6B517D04FBD00A98656 /* main.m in Sources */,
 				3A23E6B917D04FBD00A98656 /* DGAppDelegate.m in Sources */,
-				3A23E6C217D04FBD00A98656 /* DGViewController.m in Sources */,
 				3A23E6CD17D04FD800A98656 /* DGMenu.m in Sources */,
 				3A23E6D017D04FEB00A98656 /* DGMenuItem.m in Sources */,
 				3A23E6D617D0FC4300A98656 /* FUIButton.m in Sources */,
 				3A23E6D817D0FC6200A98656 /* UIImage+FlatUI.m in Sources */,
 				3A23E6DD17D1333700A98656 /* UIColor+FlatUI.m in Sources */,
 				3A23E6E017D1336E00A98656 /* UIFont+FlatUI.m in Sources */,
-				3A1E6B0D17D1413F00AF70FC /* DGViewControllerGreenViewController.m in Sources */,
 				3AADF80717D67BB8007846CC /* VC1.m in Sources */,
 				3AADF80C17D67BC3007846CC /* VC2.m in Sources */,
 				3AADF81117D67BDF007846CC /* VC3.m in Sources */,
@@ -363,14 +343,6 @@
 				3A23E6B217D04FBD00A98656 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		3A23E6C317D04FBD00A98656 /* DGViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3A23E6C417D04FBD00A98656 /* en */,
-			);
-			name = DGViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

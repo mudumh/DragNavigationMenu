@@ -8,7 +8,7 @@
 
 #import "DGAppDelegate.h"
 
-#import "DGViewController.h"
+
 #import "DGMenuItem.h"
 #import "DGMenu.h"
 #import "UIColor+FlatUI.h"
@@ -26,8 +26,10 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
         
+    // specify the width and height for a single menu item
     CGFloat width = 150;
     CGFloat height = 50;
+    // VC1, VC2, VC3, VC4 , VC5 are views controller.Each views controller corresponds to one menu item.
     VC1 * one = [[VC1 alloc] init];
     VC2 * two = [[VC2 alloc] init];
     VC3 * three = [[VC3 alloc] init];
@@ -35,24 +37,31 @@
     VC5 * five = [[VC5 alloc] init];
 
     
+    //Create 5 different menu items. One for each of the views controller's created above.
+    //You can specify the color of each menu item and the font for the title.If font is nil, then default font will be used.
+    //USE THE SAME WIDTH and HEIGHT FOR EACH MENU ITEM.
     
     
-    DGMenuItem * menu_item_1 = [[DGMenuItem alloc] initMenuItemWithTitle:@"1" width:width height:height buttonColor:[UIColor peterRiverColor] titleFont:nil titleFontColor:[UIColor whiteColor] withViewController:one];
     
-    DGMenuItem * menu_item_2 = [[DGMenuItem alloc] initMenuItemWithTitle:@"2" width:width height:height buttonColor:[UIColor peterRiverColor] titleFont:nil titleFontColor:[UIColor whiteColor] withViewController:two];
+    DGMenuItem * menu_item_1 = [[DGMenuItem alloc] initMenuItemWithTitle:@"View 1" width:width height:height buttonColor:[UIColor peterRiverColor] titleFont:nil titleFontColor:[UIColor whiteColor] withViewController:one];
     
-    DGMenuItem * menu_item_3 = [[DGMenuItem alloc] initMenuItemWithTitle:@"3" width:width height:height buttonColor:[UIColor peterRiverColor] titleFont:nil titleFontColor:[UIColor whiteColor] withViewController:three];
+    DGMenuItem * menu_item_2 = [[DGMenuItem alloc] initMenuItemWithTitle:@"View 2" width:width height:height buttonColor:[UIColor peterRiverColor] titleFont:nil titleFontColor:[UIColor whiteColor] withViewController:two];
     
-    DGMenuItem * menu_item_4 = [[DGMenuItem alloc] initMenuItemWithTitle:@"4" width:width height:height buttonColor:[UIColor peterRiverColor] titleFont:nil titleFontColor:[UIColor whiteColor] withViewController:four];
+    DGMenuItem * menu_item_3 = [[DGMenuItem alloc] initMenuItemWithTitle:@"View 3" width:width height:height buttonColor:[UIColor peterRiverColor] titleFont:nil titleFontColor:[UIColor whiteColor] withViewController:three];
+    
+    DGMenuItem * menu_item_4 = [[DGMenuItem alloc] initMenuItemWithTitle:@"View 4" width:width height:height buttonColor:[UIColor peterRiverColor] titleFont:nil titleFontColor:[UIColor whiteColor] withViewController:four];
 
-    DGMenuItem * menu_item_5 = [[DGMenuItem alloc] initMenuItemWithTitle:@"5" width:width height:height buttonColor:[UIColor peterRiverColor] titleFont:nil titleFontColor:[UIColor whiteColor] withViewController:five];
+    DGMenuItem * menu_item_5 = [[DGMenuItem alloc] initMenuItemWithTitle:@"View 5" width:width height:height buttonColor:[UIColor peterRiverColor] titleFont:nil titleFontColor:[UIColor whiteColor] withViewController:five];
     
     
   
     
-    
+   //CREATE A MENU CONTAINING THE MENU ITEMS CREATED ABOVE.
     DGMenu* menu = [[DGMenu alloc] initWithMenuItems:[[NSArray alloc] initWithObjects:menu_item_1,menu_item_2,menu_item_3,menu_item_4,menu_item_5,nil]];
+    // CREATE A DGNavigationController and initialize it with the menu.
     DGNavigationController* navigationController = [[DGNavigationController alloc] initWithMenu:menu];
+    
+    // SET THE navigation controller as the root view controller.
     self.viewController= navigationController;
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
