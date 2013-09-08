@@ -47,12 +47,8 @@
 
     DGMenuItem * menu_item_5 = [[DGMenuItem alloc] initMenuItemWithTitle:@"5" width:width height:height buttonColor:[UIColor peterRiverColor] titleFont:nil titleFontColor:[UIColor whiteColor] withViewController:five];
     
-  //  DGMenuItem * menu_item_6 = [[DGMenuItem alloc] initMenuItemWithTitle:@"6" width:width height:height buttonColor:[UIColor peterRiverColor] titleFont:nil titleFontColor:[UIColor whiteColor]];
     
-    //DGMenuItem * menu_item_7 = [[DGMenuItem alloc] initMenuItemWithTitle:@"7" width:width height:height buttonColor:[UIColor peterRiverColor] titleFont:nil titleFontColor:[UIColor whiteColor]];
-    
-    
-    //scrollViewWindowHeight should ideally be the same as the height of a menu item.
+  
     
     
     DGMenu* menu = [[DGMenu alloc] initWithMenuItems:[[NSArray alloc] initWithObjects:menu_item_1,menu_item_2,menu_item_3,menu_item_4,menu_item_5,nil]];

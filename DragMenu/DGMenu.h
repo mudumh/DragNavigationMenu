@@ -24,6 +24,7 @@
 @property(nonatomic,weak) DGNavigationController* parent_ViewController;
 
 -(id)initWithMenuItems:(NSArray *) menuItems ;
+-(void)shiftToCenter:(DGMenuItem*)item atIndex:(NSInteger)indexInArray;
 
 
 

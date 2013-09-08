@@ -91,6 +91,7 @@
     //add the views to the scrollview
     
     [self.viewControllersScrollView setPagingEnabled:YES];
+    [self.viewControllersScrollView setDelegate:self];
     CGRect newFrameForItem ;
     CGFloat current_x =0;
     for(int i =0;i<[menuItems count];i++)
@@ -121,6 +122,21 @@
     self.view = currentView;
     
     
+    
+}
+
+-(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    NSInteger menu_index = 0;
+    menu_index = [self viewControllersScrollView].contentOffset.x/screenWidth;
+    [[self scrollMenu]shiftToCenter:[[scrollMenu menuItems] objectAtIndex:menu_index] atIndex:menu_index];
+}
+-(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    
+    NSInteger menu_index = 0;
+    menu_index = [self viewControllersScrollView].contentOffset.x/screenWidth;
+    [[self scrollMenu]shiftToCenter:[[scrollMenu menuItems] objectAtIndex:menu_index] atIndex:menu_index];
     
 }
 

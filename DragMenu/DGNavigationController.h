@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "DGMenu.h"
-@interface DGNavigationController : UIViewController
+@interface DGNavigationController : UIViewController <UIScrollViewDelegate>
 -(id)initWithMenu:(DGMenu *)menu;
 @property(nonatomic,strong)DGMenu* scrollMenu;
 @property(nonatomic,strong) UIScrollView* viewControllersScrollView;
