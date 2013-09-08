@@ -2,7 +2,7 @@ DragNavigationMenu
 ==================
 
 A open source iOS control for navigation similar to the one used by groupon iOS app
-
+// WORK IN PROGRESS !
 
 To see the control in action download the repo and run the DragMenu.xcodeproj
 
